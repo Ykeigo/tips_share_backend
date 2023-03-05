@@ -1,15 +1,15 @@
 version: '3'
 services:
-# service名
-app:
-# コンテナ名
-container_name: sandbox-docker-compose
-# イメージ名
-image: sandbox-docker-compose
-# ビルドに使用するDockerfileがあるディレクトリ指定
-build: .
-# マウントディレクトリ指定
-volumes:
-- .:/go/src/github.com/taisa831/sandbox-docker-compose-go
-ports:
-- "8080:8080"
+  # service名
+  app:
+    # コンテナ名
+    container_name: sandbox-docker-compose
+    # イメージ名
+    image: sandbox-docker-compose
+    # ビルドに使用するDockerfileがあるディレクトリ指定
+    build: .
+    # マウントディレクトリ指定
+    volumes:
+      - .:/go/src/github.com/taisa831/sandbox-docker-compose-go
+    ports:
+      - "8080:8080"
