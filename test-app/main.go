@@ -1,6 +1,12 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"database/sql"
+	"fmt"
+
+	"github.com/gin-gonic/gin"
+	_ "github.com/lib/pq"
+)
 
 func main() {
 	r := gin.Default()
@@ -8,6 +14,7 @@ func main() {
 		c.JSON(200, gin.H{
 			"message": "hello",
 		})
+
 	})
 	r.GET("/health", func(c *gin.Context) {
 		c.JSON(200, gin.H{
@@ -15,4 +22,17 @@ func main() {
 		})
 	})
 	r.Run(":80")
+}
+
+func createUser(models.user) {
+	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
+		"localhost", 5432, "postgres", "password", "example", //TODO: 本番環境の値を入れる
+	)
+	db, err := sql.Open("postgres", psqlInfo)
+	if err != nil {
+		panic(err)
+	}
+
+	v.Insert()
+	defer db.Close()
 }

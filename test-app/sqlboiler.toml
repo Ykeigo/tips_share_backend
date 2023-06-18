@@ -4,10 +4,9 @@ no-tests = true
 add-enum-types = true
 
 [psql]
-  dbname = "example"
-  host   = "localhost"
-  port   = 5432
-  user   = "postgres"
-  pass   = "password"
-  schema = "myschema"
-  blacklist = ["migrations", "other"]
+  dbname  = "example"
+  host    = "localhost"
+  port    = 5432
+  user    = "postgres"
+  pass    = "password"
+  sslmode = "disable"
