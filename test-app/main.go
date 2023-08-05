@@ -1,11 +1,11 @@
 package main
 
 import (
-	"database/sql"
-	"fmt"
+	//"database/sql"
+	//"fmt"
 
 	"github.com/gin-gonic/gin"
-	_ "github.com/lib/pq"
+	//"github.com/lib/pq"
 )
 
 func main() {
@@ -23,7 +23,7 @@ func main() {
 	})
 	r.Run(":80")
 }
-
+/*
 func createUser(models.user) {
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
 		"localhost", 5432, "postgres", "password", "example", //TODO: 本番環境の値を入れる
@@ -36,3 +36,4 @@ func createUser(models.user) {
 	v.Insert()
 	defer db.Close()
 }
+*/

@@ -11,6 +11,3 @@ RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main' > /etc/
     && curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add -\
     && apt-get update\
     && apt-get install -y postgresql-client-12
-
-RUN docker run --rm -it -p 5432:5432 -e POSTGRES_PASSWORD=password \
-    --name postgres postgres
